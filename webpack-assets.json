@@ -1,0 +1,7 @@
+{
+  "javascript": {
+    "main": "http://localhost:3002/dist/main.js"
+  },
+  "styles": {},
+  "assets": {}
+}

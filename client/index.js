@@ -7,4 +7,5 @@ const View = React.createClass({
         return <div>Hello</div>
     }
 });
+
 ReactDOM.render(<View/>, document.getElementById('app'));
