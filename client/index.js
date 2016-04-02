@@ -9,6 +9,9 @@ import './assets/styles/main.scss';
 import App from './react/containers/app';
 import configureStore from './react/store/configure-store';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
 
 const initialState = window.__INITIAL_STATE__ || {};
 const store = configureStore(initialState);

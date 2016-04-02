@@ -5,7 +5,7 @@
   "styles": {},
   "assets": {
     "./client/assets/styles/main.scss": {
-      "_style": "body {\n  background: cornsilk;\n}\n"
+      "_style": "body {\n  font-family: Lato;\n  background: cornsilk;\n}\n"
     }
   }
 }
