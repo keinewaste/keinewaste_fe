@@ -11,7 +11,7 @@ module.exports = {
             publicPath: '/dist/'
         },
         build: {
-            path: path.join(root, 'build/client')
+            path: path.join(root, 'build/dist')
         }
     },
 };

@@ -5,7 +5,7 @@
   "styles": {},
   "assets": {
     "./client/assets/styles/main.scss": {
-      "_style": "body {\n  font-family: Lato;\n  background: cornsilk;\n}\n"
+      "_style": ".header {\n  width: 100%;\n  height: 60px;\n}\n\n.header-logo {\n  /* Text style for \"KeineWaste\" */\n  color: white;\n  font-size: 24px;\n  font-weight: 700;\n  letter-spacing: 0.72px;\n  line-height: 29px;\n  display: inline-block;\n}\n\nbody {\n  font-family: Lato;\n  background: black;\n  padding: 0;\n  margin: 0;\n}\n"
     }
   }
 }

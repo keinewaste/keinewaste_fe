@@ -9,16 +9,14 @@ import RegisterButton from './register-button';
 const Header = React.createClass({
     render() {
         return (
-            <AppBar
-                title="KW"
-                showMenuIconButton={false}
-                iconElementRight={(<div>
-                    <LoginButton />
-                    <RegisterButton />
-                </div>)}
+            <div
+                className="header"
             >
+                <HeaderLogo />
+                <LoginButton />
+                <RegisterButton />
 
-            </AppBar>
+            </div>
         );
     }
 });

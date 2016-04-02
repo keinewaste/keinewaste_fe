@@ -3,7 +3,7 @@ import React from 'react';
 const Logo = React.createClass({
     propTypes: {},
     render() {
-        return <div>Logo</div>;
+        return <div className="header-logo">Logo</div>;
     }
 });
 
