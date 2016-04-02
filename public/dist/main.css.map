@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///webpack:///client/client/assets/styles/main.scss"],"names":[],"mappings":"AAAA,KACI,kBAAqB","file":"main.css","sourcesContent":["body {\n    background: cornsilk;\n}\n\n\n/** WEBPACK FOOTER **\n ** webpack:///client/client/assets/styles/main.scss\n **/"],"sourceRoot":""}

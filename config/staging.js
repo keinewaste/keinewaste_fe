@@ -8,10 +8,10 @@ module.exports = {
     webpack: {
         assets: {
             path: path.join(publicFolderPath, 'dist'),
-            publicPath: '//cdn1.net/assets/{commit}/'
+            publicPath: '/dist/'
         },
         build: {
             path: path.join(root, 'build/client')
         }
-    }
+    },
 };

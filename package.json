@@ -6,8 +6,12 @@
   "scripts": {
     "dev": "NODE_PATH=. npm-run-all --parallel webpack-dev-server dev-server",
     "webpack-dev-server": "node webpack/webpack-dev-server.js --use-strict",
+    "webpack-production": "npm run webpack -- webpack/production.config.js",
+    "staging": "APP_MODE=staging NODE_ENV=production npm-run-all webpack-production staging-server",
+    "staging-server": "NODE_PATH=. nodemon start.js",
     "dev-server": "nodemon start.js --ext js --legacy-watch --watch",
-    "build": "webpack",
+    "build": "NODE_ENV=production npm-run-all webpack-production",
+    "webpack": "NODE_PATH=. webpack --verbose --colors --display-error-details --config",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,6 +37,7 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-survivejs-kanban": "^0.3.3",
     "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "json-loader": "^0.5.4",
     "node-sass": "^3.4.2",

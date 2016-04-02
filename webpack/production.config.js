@@ -23,7 +23,7 @@ module.exports = {
     output: {
         path: config.assets.path,
         filename: '[name].js',
-        publicPath: config.assets.publicPath.replace('{commit}', assetsHash)
+        publicPath: config.assets.publicPath//.replace('{commit}', assetsHash)
     },
     plugins: [
         new ExtractTextPlugin('[name].css'),
