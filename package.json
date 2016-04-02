@@ -8,7 +8,7 @@
     "webpack-dev-server": "node webpack/webpack-dev-server.js --use-strict",
     "webpack-production": "npm run webpack -- webpack/production.config.js",
     "staging": "APP_MODE=staging NODE_ENV=production npm-run-all webpack-production staging-server",
-    "staging-server": "NODE_PATH=. nodemon start.js",
+    "staging-server": "NODE_PATH=. PORT=80 nodemon start.js",
     "dev-server": "nodemon start.js --ext js --legacy-watch --watch",
     "build": "NODE_ENV=production npm-run-all webpack-production",
     "webpack": "NODE_PATH=. webpack --verbose --colors --display-error-details --config",
