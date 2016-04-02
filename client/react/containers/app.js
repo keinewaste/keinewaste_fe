@@ -1,4 +1,4 @@
-import App from '../components/App';
+import App from '../components/app';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
