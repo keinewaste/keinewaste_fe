@@ -3,5 +3,9 @@
     "main": "http://localhost:3002/dist/main.js"
   },
   "styles": {},
-  "assets": {}
+  "assets": {
+    "./client/assets/styles/main.scss": {
+      "_style": "body {\n  background: cornsilk;\n}\n"
+    }
+  }
 }

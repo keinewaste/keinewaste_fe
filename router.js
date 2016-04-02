@@ -1,9 +1,9 @@
 const express = require('express');
 
-const router = new express.Router();
+const indexController = require('server/controllers/index');
 
-router.get('/', (req, res) => {
-    res.send('self check');
-});
+const router = new express.Router();
+router.get('/', indexController);
+
 
 module.exports = router;
