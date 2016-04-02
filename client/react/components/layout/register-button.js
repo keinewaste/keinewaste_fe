@@ -1,10 +1,24 @@
 import React from 'react';
-import RaisedButton from 'material-ui/lib/raised-button';
+import FlatButton from 'material-ui/lib/flat-button';
 
 const LoginButton = React.createClass({
     propTypes: {},
     render() {
-        return <RaisedButton label="Register" />;
+        const style = {
+            border: '2px solid #e45a4c',
+            color: 'white',
+            marginLeft: '14px',
+            textTransform: 'none',
+            letterSpacing: '0.54px',
+            fontWeight: 700
+
+        };
+        return <FlatButton
+            style={style}
+            label="Register"
+            hoverColor="#e45a4c"
+            rippleColor="#E87165"
+        />;
     }
 });
 

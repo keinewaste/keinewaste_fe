@@ -1,11 +1,14 @@
 import React from 'react';
 
 import {deepOrange500} from 'material-ui/lib/styles/colors';
-import Header from './layout/header';
+
 
 import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
 import theme from '../theme';
+
+import About from './about/about';
+
 
 const App = React.createClass({
     childContextTypes: {
@@ -19,7 +22,8 @@ const App = React.createClass({
     render() {
         return (
             <div>
-                <Header />
+                <About />
+
             </div>
         );
     }

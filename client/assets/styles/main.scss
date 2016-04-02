@@ -1,9 +1,18 @@
 @import 'header';
 
+* {
+    box-sizing: border-box;
+
+    &:focus, &:active {
+        outline: 0;
+    }
+}
+
 body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     font-family: Lato;
-    background: black;
     padding: 0;
     margin: 0;
 }

@@ -13,9 +13,10 @@ const Header = React.createClass({
                 className="header"
             >
                 <HeaderLogo />
-                <LoginButton />
-                <RegisterButton />
-
+                <div className="auth-buttons">
+                    <LoginButton />
+                    <RegisterButton />
+                </div>
             </div>
         );
     }

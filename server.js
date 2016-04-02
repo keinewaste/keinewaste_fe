@@ -1,5 +1,5 @@
 var app = require('./app');
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 
 app.listen(port, (error) => {
     if (error) {

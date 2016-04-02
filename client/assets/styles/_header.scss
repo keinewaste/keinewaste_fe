@@ -1,14 +1,42 @@
+@import 'client/assets/styles/core/variables';
+
 .header {
     width: 100%;
-    height: 60px;
+    height: $headerHeight;
+    padding: 20px 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: baseline;
+
+    .auth-buttons {
+        flex-basis: 300px;
+
+
+    }
 }
 
 .header-logo {
     /* Text style for "KeineWaste" */
+    flex: 1;
     color: white;
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 0.72px;
     line-height: 29px;
     display: inline-block;
+
+    &:before {
+        position: relative;
+        margin-right: 10px;
+        top: 5px;
+        background-image: url(../images/icon.png);
+        content: '';
+        width: 53px;
+        height: 42px;
+        display: inline-block;
+    }
 }
