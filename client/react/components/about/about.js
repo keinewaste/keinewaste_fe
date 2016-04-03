@@ -8,8 +8,6 @@ import CompanyDescription from './company-description/company-description';
 import HowItWorks from './how-it-works/how-it-works';
 import JoinNow from './join-now/join-now';
 
-
-
 const About = React.createClass({
     propTypes: {},
     mixins: [PureRenderMixin],
