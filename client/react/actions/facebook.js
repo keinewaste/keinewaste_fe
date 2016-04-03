@@ -37,12 +37,6 @@ function signup() {
                         console.log(profileResponse);
                     });
 
-                    UserClient.ModifyUser({
-                        'token': authInfo.accessToken,
-                        'type': 'receiver'
-                    }, function (data, error) {
-                        console.log(data);
-                    })
                 }
 
 
