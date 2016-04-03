@@ -10,7 +10,7 @@ const EditProfile = React.createClass({
     getDefaultProps() {
         return {
             user: {
-                name: 'Michael Schumacher'
+                name: 'Davide Mazzanti'
             }
         }
     },
@@ -44,7 +44,7 @@ const EditProfile = React.createClass({
     },
 
     onSave() {
-        console.log(this.state);
+        location.href="/donate/step1"
     },
 
     render() {
@@ -75,15 +75,18 @@ const EditProfile = React.createClass({
                         <TextField
                             onKeyDown={this.saveToState.bind(this, 'association_name')}
                             floatingLabelText="Business/Association name"
+                            value="Restaurant amigo"
                         /><br/>
                         <TextField
                             onKeyDown={this.saveToState.bind(this, 'address')}
                             floatingLabelText="Address"
                             hintText="Street, ZIP, City"
+                            value="Greifswalder Strasse 212, Berlin"
                         /><br/>
                         <TextField
                             onKeyDown={this.saveToState.bind(this, 'telephone')}
                             floatingLabelText="Telephone"
+                            value="+491111111111"
                         /><br/>
 
                         <div className="choose-team">

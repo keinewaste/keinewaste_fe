@@ -32,13 +32,16 @@ function signup() {
                         body: JSON.stringify(authInfo)
                     }).then(res => {
                         console.log(res.json());
+
                     });
 
                     FB.api('/me', function (profileResponse) {
                         console.log(profileResponse);
                     });
 
-                    cookie.save('accessToken', authInfo.accessToken, { path: '/' });
+                    cookie.save('accessToken', authInfo.accessToken, {path: '/'});
+                    window.location.href = '/profile';
+                    
                 }
 
 

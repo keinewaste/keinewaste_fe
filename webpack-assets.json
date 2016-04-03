@@ -4,7 +4,7 @@
   },
   "styles": {},
   "assets": {
-    "./client/assets/images/avatar.jpg": "http://localhost:3002/dist/a692ff2935e7ce61f52807a3748b18c4.jpg",
+    "./client/assets/images/avatar.jpg": "http://localhost:3002/dist/9e5a6355860ca4a308a0920817018cf0.jpg",
     "./client/assets/images/background.jpg": "http://localhost:3002/dist/fa4f1b1fb45254e46173a622b43305b5.jpg",
     "./client/assets/images/donator-selected.png": "http://localhost:3002/dist/7e8b7bb79dfe07ed7cc929e0d42ba3a1.png",
     "./client/assets/images/donator.png": "http://localhost:3002/dist/5dd836f86464d14b8fa11822ddffede5.png",
