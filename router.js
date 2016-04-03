@@ -1,9 +1,11 @@
 const express = require('express');
 
-const indexController = require('server/controllers/index');
+const userController = require('server/controllers/user');
 
 const router = new express.Router();
-router.get('/', indexController);
 
+router.route('/session')
+    .get(userController.getSession)
+    .post(userController.saveSession);
 
 module.exports = router;

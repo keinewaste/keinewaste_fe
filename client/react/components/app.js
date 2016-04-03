@@ -7,9 +7,6 @@ import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
 import theme from '../theme';
 
-import About from './about/about';
-
-
 const App = React.createClass({
     childContextTypes: {
         muiTheme: React.PropTypes.object
@@ -19,11 +16,22 @@ const App = React.createClass({
             muiTheme: getMuiTheme(theme, { userAgent: 'all' })
         };
     },
+    componentDidMount() {
+        window.fbAsyncInit = () => {
+            FB.init({
+                appId: '1690233737898636',
+                xfbml: true,
+                version: 'v2.5'
+            });
+
+
+            this.props.checkUser();
+        };
+    },
     render() {
         return (
             <div>
-                <About />
-
+                {this.props.children}
             </div>
         );
     }

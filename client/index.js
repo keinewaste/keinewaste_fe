@@ -6,19 +6,32 @@ import { Provider } from 'react-redux';
 import 'es6-promise';
 
 import './assets/styles/main.scss';
-import App from './react/containers/app';
-import configureStore from './react/store/configure-store';
+
+import { Router, Route, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+
+import { configureStore, DevTools } from './react/store/store';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
+
+import { routes } from './routes';
 
 injectTapEventPlugin();
 
 const initialState = window.__INITIAL_STATE__ || {};
-const store = configureStore(initialState);
+const store = configureStore(browserHistory, initialState);
+const history = syncHistoryWithStore(browserHistory, store);
 
 render(
     <Provider store={store}>
-        <App />
+        <Router history={history} routes={routes} />
     </Provider>,
     document.getElementById('app')
 );
+//
+//render(
+//    <Provider store={store}>
+//        <DevTools />
+//    </Provider>,
+//    document.getElementById('devtools')
+//);

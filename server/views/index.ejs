@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <% assets.styles.forEach(function(style) { %>
-        <link href="<%- style %>" media="screen" rel="stylesheet" />
+    <link href="<%- style %>" media="screen" rel="stylesheet" />
     <% }); %>
 </head>
 <body>
@@ -14,5 +14,16 @@
 <% assets.javascript.forEach(function(src) { %>
 <script src="<%- src %>"></script>
 <% }); %>
+<script>
+    // Load the SDK asynchronously
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 </body>
 </html>

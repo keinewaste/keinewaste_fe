@@ -1,15 +1,17 @@
-import App from '../components/app';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { checkUser } from '../actions/facebook';
+import Header from '../components/layout/header';
+import { signup } from 'client/react/actions/facebook';
 
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators({
-        checkUser
+        signup
     }, dispatch)
 );
+
 
 function mapStateToProps(state) {
     return state;
 }
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

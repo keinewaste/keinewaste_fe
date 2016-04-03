@@ -1,7 +1,7 @@
 import React from 'react';
 import './main-image-block.scss';
 import RaisedButton from 'material-ui/lib/raised-button';
-import Header from '../../layout/header';
+import Header from '../../../containers/header';
 
 const MainImageBlock = React.createClass({
     propTypes: {},
