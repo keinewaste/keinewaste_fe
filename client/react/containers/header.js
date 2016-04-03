@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Header from '../components/layout/header';
+import Header from '../components/about/header/header';
 import { signup } from 'client/react/actions/facebook';
 
 const mapDispatchToProps = (dispatch) => (
