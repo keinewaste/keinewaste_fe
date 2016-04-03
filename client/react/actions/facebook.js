@@ -46,6 +46,46 @@ function signup() {
                 }
 
 
+//                UserClient.ModifyUser({  // not used
+//                    token: response.authResponse,
+//                    address: 'text_field', // from google autocomplete
+//                    companyName: 'company_name', // not used
+//                    bio: 'textfield', // not used
+//                    type: 'receiver' || 'donor',
+//                    // id type == 'receiver'
+//                    deliveryType: 'pickup' || 'delivery',
+//                    distance: 123123, //in meters
+//                    categories: [1,2,3], //ids of categories
+//                    meetingTimeFrom: '2016-04-03 15:00:00',
+//                    meetingTimeTo: '2016-04-03 15:00:00'
+//                })
+//
+//                Autocomplete.Autocomplete({
+//                    query: 'query'
+//                })
+//
+//                Categories.GetAll({}) // we can mock it
+//
+//                Market.CreateOffer({
+//                    deliveryType: 'pickup' || 'delivery',
+//                    distance: 123123, //in meters
+//                    categories: [1,2,3], //ids of categories
+//                    description: '', // not used
+//                    products: [ // this section comes from autocomplete
+//                        {
+//                            "imageUrl" : "https://espngrantland.files.wordpress.com/2015/07/minions_bananas.jpg",
+//                            "quantity" : "2pcs", // not used
+//                            "title" : "my bananas"
+//                        },
+//                        {
+//                            "title" : "Potatas",
+//                            "quantity" : "10kg", // not used
+//                            "imageUrl" : "http://www.potatoes.com/files/5713/4202/4172/07.jpg"
+//                        }
+//                    ],
+//                    meetingTime: '2016-04-03 15:00:00'
+//                })
+
             }, scope);
         });
     };
