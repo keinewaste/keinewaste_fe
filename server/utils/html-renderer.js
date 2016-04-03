@@ -23,6 +23,8 @@ const configureStore = client.configureStore;
 
 const baseViewPath = path.join(__dirname, '../views/index.ejs');
 
+import KeineWaste from 'keinewaste-sdk';
+
 
 function buildAssets() {
     return {
@@ -36,11 +38,15 @@ exports.render = function render(data, userAgent) {
         .then(viewTemplate => {
             console.log('PERFORMANCE PDP: Html render start');
 
+
             const store = configureStore(browserHistory, initialState);
             const history = ReactRouterRedux.syncHistoryWithStore(browserHistory, store);
 
 
-            const component = React.createElement(Provider, { store: store }, React.createElement(ReactRouter.Router, { history, routers }));
+            const component = React.createElement(Provider, {store: store}, React.createElement(ReactRouter.Router, {
+                history,
+                routers
+            }));
 
             const renderTime = new Date().getTime();
             const html = ejs.render(viewTemplate, {
@@ -66,6 +72,17 @@ exports.middleware = function (req, res) {
         console.log('user logged');
     }
 
+    if (typeof req.cookies.accessToken !== 'undefined') {
+        console.log('Access token: ' + req.cookies.accessToken);
+        KeineWaste.SetConfig({
+            'token': req.cookies.accessToken
+        });
+
+        KeineWaste.UserClient().GetUser({'id': 'me'}, function (error, data) {
+            console.log(data);
+        });
+    }
+
     const memoryHistory = ReactRouter.createMemoryHistory(req.url);
     const store = configureStore(memoryHistory);
     const history = ReactRouterRedux.syncHistoryWithStore(memoryHistory, store);
@@ -73,7 +90,7 @@ exports.middleware = function (req, res) {
     console.log(req.url);
 
     // check user session
-    ReactRouter.match({ history, routes, location: req.url }, (error, redirectLocation, renderProps) => {
+    ReactRouter.match({history, routes, location: req.url}, (error, redirectLocation, renderProps) => {
 
         if (error) {
             res.status(500).send(error.message)

@@ -1,5 +1,8 @@
 import clone from 'lodash/cloneDeep';
-import { UserClient } from 'keinewaste-sdk';
+import KeineWaste from 'keinewaste-sdk';
+import cookie from 'react-cookie';
+
+var UserClient = KeineWaste.UserClient();
 
 import fetch from 'isomorphic-fetch';
 
@@ -27,20 +30,58 @@ function signup() {
                             "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
                         },
                         body: JSON.stringify(authInfo)
-                    }).then(res => { console.log(res.json()); });
+                    }).then(res => {
+                        console.log(res.json());
+                    });
 
-                    FB.api('/me', function(profileResponse) {
+                    FB.api('/me', function (profileResponse) {
                         console.log(profileResponse);
                     });
+
+                    cookie.save('accessToken', authInfo.accessToken, { path: '/' });
                 }
 
 
+//                UserClient.ModifyUser({  // not used
+//                    token: response.authResponse,
+//                    address: 'text_field', // from google autocomplete
+//                    companyName: 'company_name', // not used
+//                    bio: 'textfield', // not used
+//                    type: 'receiver' || 'donor',
+//                    // id type == 'receiver'
+//                    deliveryType: 'pickup' || 'delivery',
+//                    distance: 123123, //in meters
+//                    categories: [1,2,3], //ids of categories
+//                    meetingTimeFrom: '2016-04-03 15:00:00',
+//                    meetingTimeTo: '2016-04-03 15:00:00'
+//                })
+//
+//                Autocomplete.Autocomplete({
+//                    query: 'query'
+//                })
+//
+//                Categories.GetAll({}) // we can mock it
+//
+//                Market.CreateOffer({
+//                    deliveryType: 'pickup' || 'delivery',
+//                    distance: 123123, //in meters
+//                    categories: [1,2,3], //ids of categories
+//                    description: '', // not used
+//                    products: [ // this section comes from autocomplete
+//                        {
+//                            "imageUrl" : "https://espngrantland.files.wordpress.com/2015/07/minions_bananas.jpg",
+//                            "quantity" : "2pcs", // not used
+//                            "title" : "my bananas"
+//                        },
+//                        {
+//                            "title" : "Potatas",
+//                            "quantity" : "10kg", // not used
+//                            "imageUrl" : "http://www.potatoes.com/files/5713/4202/4172/07.jpg"
+//                        }
+//                    ],
+//                    meetingTime: '2016-04-03 15:00:00'
+//                })
 
-
-
-                //UserClient.ModifyUser({
-                //    token: response.authResponse
-                //})
             }, scope);
         });
     };
@@ -60,11 +101,13 @@ function checkUser() {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(response.authResponse)
-                }).then(res => { console.log(res); });
+                }).then(res => {
+                    console.log(res);
+                });
             }
         };
 
-        FB.getLoginStatus(function(response) {
+        FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         })
     }
@@ -72,7 +115,7 @@ function checkUser() {
 
 
 // default export is used in container, pushTrackingData is used in other actions
-export { signup, checkUser };
+export {signup, checkUser};
 
 
 /*
