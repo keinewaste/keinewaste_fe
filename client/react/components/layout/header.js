@@ -15,7 +15,6 @@ const Header = React.createClass({
             >
                 <HeaderLogo />
                 <div className="auth-buttons">
-                    <LoginButton />
                     <RegisterButton signup={this.props.signup} />
                 </div>
             </div>
