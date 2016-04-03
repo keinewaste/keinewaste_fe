@@ -9,10 +9,28 @@ const FoodSelection = React.createClass({
             categories: []
         }
     },
-    saveFoodCategory(id) {
-        this.setState({
-            categories: this.state.categories.concat(id)
-        });
+    saveFoodCategory(id, e, isChecked) {
+
+        const categories = this.state.categories.slice();
+
+        if (isChecked) {
+            this.setState({
+                categories: categories.concat(id)
+            });
+        } else {
+            const categoryIndex = categories.indexOf(id);
+
+            if (categoryIndex > -1) {
+                categories.splice(categoryIndex, 1);
+
+                this.setState({
+                    categories
+                });
+            }
+
+        }
+
+
     },
     isChecked(id) {
         return this.state.categories.indexOf(id) > -1;
