@@ -7,10 +7,17 @@ const LoginButton = React.createClass({
         const style = {
             color: 'white',
             textTransform: 'none',
+
+
             letterSpacing: '0.54px',
             fontWeight: 700
         };
-        return <FlatButton style={style} label="Log in" />;
+        return <FlatButton
+            style={style}
+            label="Log in"
+            href="/profile"
+            linkButton={true}
+        />;
     }
 });
 
