@@ -6,15 +6,15 @@ import About from './react/components/about/about';
 
 import EditProfile from './react/components/profile/edit/edit-profile';
 
-import createOffer from './react/components/donate/step1/create-offer';
+import createOffer from './react/containers/create-offer';
 
-const Home = () => (<div>Home!</div>)
-
+const Home = () => (<div>Step 2</div>);
 export const routes = (
     <Route path="/" component={App}>
         <IndexRoute component={About} />
-        <Route path="register" component={Home} />
+
         <Route path="profile" component={EditProfile} />
         <Route path="donate/step1" component={createOffer} />
+        <Route path="donate/step2" component={Home} />
     </Route>
-)
+);

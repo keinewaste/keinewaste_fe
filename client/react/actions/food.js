@@ -5,7 +5,6 @@ import map from 'lodash/map'
 
 const Autocomplete = KeineWaste.Autocomplete();
 const Market = KeineWaste.Market();
-
 import fetch from 'isomorphic-fetch';
 
 export const SET_FOODLIST = 'SET_FOODLIST';
@@ -26,7 +25,7 @@ function requestFood(value) {
             }
 
 
-            const foodList = convertToStrings(data)
+            const foodList = convertToStrings(data);
 
 
             dispatch({ type: SET_FOODLIST, foodList: foodList });
@@ -38,10 +37,12 @@ function requestFood(value) {
 function requestCreateOffer(data) {
     return (dispatch, getState) => {
 
+        const token = cookie.load('accessToken');
+
         Market.CreateOffer({
-            token: window.token,
+            token: token,
             deliveryType: data.deliveryType, //'pickup' || 'delivery',
-            distance: data.deliveryArea, //123123, //in meters
+            distance: Number(data.deliveryArea) || 10000, //123123, //in meters
             categories: data.categories, //[1, 2, 3], //ids of categories
             description: '', // not used
             products: data.foodList.map(food => {
@@ -52,6 +53,14 @@ function requestCreateOffer(data) {
                 }
             }),
             meetingTime: data.deliveryTime
+        }, function(err, data) {
+            if (err) {
+                console.log('create offer failed', err);
+
+                return;
+            }
+
+            window.location.href = '/donator/step2';
         })
     }
 }
@@ -102,20 +111,4 @@ function requestCreateOffer(data) {
 
 
 // default export is used in container, pushTrackingData is used in other actions
-export { requestCreateOffer };
-
-
-/*
-
-
- {authResponse: Object, status: "connected"}
- authResponse
- :
- Object
- accessToken:"CAAYBQjWI6owBAPWQgOch2ZCVm8tCv76WHOJHMXnIVXh7Fgq6hJVaPUGTkDq8xLoRWZCf6DnBI5WiTn35Fv6yFD3JVToYhBZBp55bQn5lg4ZBuZCArxhTk2khbxHEH83081HHNKtQ1VVLV9ge2EOfSVkELKMNwlRJ3RNtdS77QdiQ7qeERZAUFQ4mvNy0ZBUHtcZD"
- expiresIn:5373,
- signedRequest:"f1HGxytWCcAYzdFzSf3FEjpNO-7FyLAgcj5mAz9jMzc.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUR4RzE3a0hYS1N3YXZMVUJJNjZ5aTJzUF9maEloVTF1UGZXelJpLU5NLVVzU01VYmVTdGxqVmN0eTRTbldWSXQtc2Y5Umx1d19fV2ZKQTBmQlNmaUhscmlhc2dsdmk1bjdDSFNNVklGb3lrVnFpcFF3czZMUXRNdElvb1VnVlNqWXJYTjBsc0haVjJOTEM3c3NtUHBWay1kMGtEREF4UXdoWHc4RTlaMXktZlR2YVE4N3lmWTN0bV80dkdlSEE1NDQ1M0ZjUDU5Q1RxVlBYM1F1eWRkcjY3a2d1LWdLM1FSMC1YYV92N3dBa3VLU2VRV0pFbVpYYklfcktFQ0lnVmNSY3o4cUtIMXRTdUlCSThUVHRZRVJqV25BOUZ1Qk0tTlJ1b191Z3Z5NjNPVGxhNHowTXlwOXlRb2QxM2FPMVRCaHg1Slh3Y0FCTl80V3lYS1A2NnJUWSIsImlzc3VlZF9hdCI6MTQ1OTY0NzAyNywidXNlcl9pZCI6Ijk5OTQ0NjMwMDEwOTY0OSJ9"
- userID:"999446300109649"
-
- status:"connected"
- */
+export { requestFood, requestCreateOffer };
