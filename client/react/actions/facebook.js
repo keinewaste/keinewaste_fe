@@ -1,5 +1,7 @@
 import clone from 'lodash/cloneDeep';
-import { UserClient } from 'keinewaste-sdk';
+import KeineWaste from 'keinewaste-sdk';
+
+var UserClient = KeineWaste.UserClient();
 
 import fetch from 'isomorphic-fetch';
 
@@ -27,15 +29,21 @@ function signup() {
                             "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
                         },
                         body: JSON.stringify(authInfo)
-                    }).then(res => { console.log(res.json()); });
+                    }).then(res => {
+                        console.log(res.json());
+                    });
 
-                    FB.api('/me', function(profileResponse) {
+                    FB.api('/me', function (profileResponse) {
                         console.log(profileResponse);
                     });
+
+                    UserClient.ModifyUser({
+                        'token': authInfo.accessToken,
+                        'type': 'receiver'
+                    }, function (data, error) {
+                        console.log(data);
+                    })
                 }
-
-
-
 
 
 //                UserClient.ModifyUser({  // not used
@@ -97,11 +105,13 @@ function checkUser() {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(response.authResponse)
-                }).then(res => { console.log(res); });
+                }).then(res => {
+                    console.log(res);
+                });
             }
         };
 
-        FB.getLoginStatus(function(response) {
+        FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         })
     }
@@ -109,7 +119,7 @@ function checkUser() {
 
 
 // default export is used in container, pushTrackingData is used in other actions
-export { signup, checkUser };
+export {signup, checkUser};
 
 
 /*

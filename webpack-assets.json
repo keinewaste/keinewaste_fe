@@ -9,6 +9,7 @@
     "./client/assets/images/liza.png": "http://localhost:3002/dist/1f2a897d4ca67d9480b7e2c33f9e4774.png",
     "./client/assets/images/magic.png": "http://localhost:3002/dist/9d7d7b9f3d474554ee9911a4b43e5d0a.png",
     "./client/assets/images/sebastian.png": "http://localhost:3002/dist/8e0987300e4d3ba230044641211ae339.png",
+    "./client/assets/images/avatar.jpg": "http://localhost:3002/dist/a692ff2935e7ce61f52807a3748b18c4.jpg",
     "./client/assets/styles/main.scss": {
       "_style": ".header {\n  width: 100%;\n  height: 60px;\n  padding: 20px 40px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 10;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-align-items: baseline;\n      -ms-flex-align: baseline;\n          align-items: baseline;\n}\n\n.header .auth-buttons {\n  -webkit-flex-basis: 300px;\n      -ms-flex-preferred-size: 300px;\n          flex-basis: 300px;\n}\n\n.header-logo {\n  /* Text style for \"KeineWaste\" */\n  -webkit-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  color: white;\n  font-size: 24px;\n  font-weight: 700;\n  letter-spacing: 0.72px;\n  line-height: 29px;\n  display: inline-block;\n}\n\n.header-logo:before {\n  position: relative;\n  margin-right: 10px;\n  top: 5px;\n  background-image: url(http://localhost:3002/dist/fddc34dc11dff2229648cf8f547328e3.png);\n  content: '';\n  width: 56px;\n  height: 51px;\n  display: inline-block;\n}\n\n* {\n  box-sizing: border-box;\n}\n\n*:focus, *:active {\n  outline: 0;\n}\n\nbody {\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-family: Lato;\n  padding: 0;\n  margin: 0;\n}\n"
     },
@@ -26,6 +27,9 @@
     },
     "./client/react/components/about/main-image-block/main-image-block.scss": {
       "_style": ".about-main-image-block {\n  color: white;\n  width: 100%;\n  height: 600px;\n  background: url(http://localhost:3002/dist/fa4f1b1fb45254e46173a622b43305b5.jpg) top center no-repeat;\n  background-size: 100% 100%, cover;\n  padding-top: 100px;\n}\n\n.about-main-image-block .content {\n  max-width: 660px;\n  margin: auto;\n}\n\n.about-main-image-block .content .slogan {\n  width: 660px;\n  color: white;\n  font-size: 60px;\n  font-weight: 700;\n  letter-spacing: 1.75px;\n  line-height: 72px;\n  margin-bottom: 20px;\n}\n\n.about-main-image-block .content .description {\n  width: 660px;\n  color: white;\n  font-size: 24px;\n  font-weight: 400;\n  letter-spacing: 0.72px;\n  line-height: 29px;\n  margin: 0 0 50px 0;\n}\n\n.about-main-image-block .content .join {\n  text-align: center;\n}\n\n.about-main-image-block .content .join-button {\n  background: none !important;\n  height: 29px;\n  font-size: 24px;\n  font-weight: 700;\n  letter-spacing: 0.72px;\n  line-height: 29px;\n  border-radius: 8px;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);\n}\n"
+    },
+    "./client/react/components/profile/edit/edit-profile.scss": {
+      "_style": ".edit-profile {\n  padding: 60px 110px;\n}\n\n.edit-profile h2 {\n  /* Text style for \"Michael Schuma\" */\n  font-size: 36px;\n  font-weight: 900;\n  letter-spacing: 1.08px;\n  line-height: 44px;\n}\n\n.edit-profile .wrap {\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.edit-profile .wrap img {\n  margin-right: 90px;\n}\n\n.edit-profile .wrap .form {\n  width: 330px;\n}\n"
     }
   }
 }

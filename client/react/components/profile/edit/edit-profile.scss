@@ -1,0 +1,25 @@
+.edit-profile {
+    padding: 60px 110px;
+
+    h2 {
+        /* Text style for "Michael Schuma" */
+        font-size: 36px;
+        font-weight: 900;
+        letter-spacing: 1.08px;
+        line-height: 44px;
+    }
+
+    .wrap {
+        display: flex;
+
+        img {
+            margin-right: 90px;
+        }
+
+        .form {
+            width: 330px;
+
+        }
+    }
+
+}
