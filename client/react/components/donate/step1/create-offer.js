@@ -3,6 +3,8 @@ import Header from '../../layout/header';
 import Checkbox from 'material-ui/lib/checkbox';
 
 import FoodSelection from '../../common/food-selection/food-selection';
+import FoodInput from '../../../containers/food-input';
+
 import './create-offer.scss';
 
 const Donate = React.createClass({
@@ -16,6 +18,7 @@ const Donate = React.createClass({
                     <h1>Donate</h1>
                     <h3>You have got (select at least one)</h3>
                     <FoodSelection />
+                    <FoodInput />
                 </div>
             </div>
         );

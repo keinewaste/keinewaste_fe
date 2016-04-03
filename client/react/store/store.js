@@ -2,7 +2,7 @@ import React from 'react';
 
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
-import reducer from '../reducers';
+import { foodListReducer } from '../reducers';
 
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import { createDevTools } from 'redux-devtools';
@@ -22,7 +22,8 @@ export const DevTools = createDevTools(
 
 export function configureStore(history, initialState) {
     const reducer = combineReducers({
-        routing: routerReducer
+        routing: routerReducer,
+        foodList: foodListReducer
     });
 
     const store = createStore(
