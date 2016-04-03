@@ -14,7 +14,8 @@ const Delivery = React.createClass({
     getInitialState() {
         return {
             deliveryType: 'pickup',
-            deliveryArea: "1000"
+            deliveryArea: "1000",
+            deliveryTime: moment().format('YYYY-MM-DD 17:00:00')
         }
     },
 
@@ -29,7 +30,7 @@ const Delivery = React.createClass({
         });
     },
     saveDeliveryTime(e, value) {
-        const dateTime = moment(value).format('YYYY-MM-DD HH:mm');
+        const dateTime = moment(value).format('YYYY-MM-DD HH:mm:00');
 
         this.setState({
             deliveryTime: dateTime
@@ -91,6 +92,7 @@ const Delivery = React.createClass({
                         format="24hr"
                         hintText="24hr Format"
                         onChange={this.saveDeliveryTime}
+                        value={new Date(this.state.deliveryTime)}
                     />
                 </div>
 

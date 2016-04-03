@@ -3,12 +3,12 @@ import KeineWaste from 'keinewaste-sdk';
 import cookie from 'react-cookie';
 import map from 'lodash/map'
 
-var Autocomplete = KeineWaste.Autocomplete();
+const Autocomplete = KeineWaste.Autocomplete();
+const Market = KeineWaste.Market();
 
 import fetch from 'isomorphic-fetch';
 
 export const SET_FOODLIST = 'SET_FOODLIST';
-
 
 
 function convertToStrings(data) {
@@ -35,44 +35,29 @@ function requestFood(value) {
 }
 
 
+function requestCreateOffer(data) {
+    return (dispatch, getState) => {
 
-
-
-
-function signup() {
-    return function (dispatch, getState) {
-        console.log('signup called');
-        const state = getState();
-
-
-        return new Promise((resolve, reject) => {
-
-            const scope = {
-                scope: 'email,public_profile'
-            };
-            FB.login((response) => {
-                console.log('success login', response);
-                const authInfo = response.authResponse;
-
-
-                if (authInfo) {
-
-                    fetch('/api/session', {
-                        method: 'post',
-                        headers: {
-                            "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-                        },
-                        body: JSON.stringify(authInfo)
-                    }).then(res => {
-                        console.log(res.json());
-                    });
-
-                    FB.api('/me', function (profileResponse) {
-                        console.log(profileResponse);
-                    });
-
-                    cookie.save('accessToken', authInfo.accessToken, { path: '/' });
+        Market.CreateOffer({
+            token: window.token,
+            deliveryType: data.deliveryType, //'pickup' || 'delivery',
+            distance: data.deliveryArea, //123123, //in meters
+            categories: data.categories, //[1, 2, 3], //ids of categories
+            description: '', // not used
+            products: data.foodList.map(food => {
+                return {
+                    imageUrl: "https://espngrantland.files.wordpress.com/2015/07/minions_bananas.jpg",
+                    quantity: food.quantity,
+                    title: food.name
                 }
+            }),
+            meetingTime: data.deliveryTime
+        })
+    }
+}
+
+
+
 
 
 //                UserClient.ModifyUser({  // not used
@@ -115,15 +100,9 @@ function signup() {
 //                    meetingTime: '2016-04-03 15:00:00'
 //                })
 
-            }, scope);
-        });
-    };
-}
-
-
 
 // default export is used in container, pushTrackingData is used in other actions
-export { requestFood };
+export { requestCreateOffer };
 
 
 /*
