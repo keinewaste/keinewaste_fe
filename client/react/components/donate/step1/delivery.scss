@@ -1,0 +1,21 @@
+.delivery-type {
+    margin-bottom: 30px;
+}
+
+
+.delivery-area {
+    display: flex;
+    width: 500px;
+    align-items: flex-start;
+
+    &-choises {
+        flex: 1;
+    }
+    &-label {
+        flex-basis: 50px;
+    }
+}
+
+.delivery-time {
+    margin-bottom: 30px;
+}
