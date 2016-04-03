@@ -56,11 +56,9 @@ function requestCreateOffer(data) {
         }, function(err, data) {
             if (err) {
                 console.log('create offer failed', err);
-
-                return;
             }
 
-            window.location.href = '/donator/step2';
+            window.location.href = '/donate/step2';
         })
     }
 }
