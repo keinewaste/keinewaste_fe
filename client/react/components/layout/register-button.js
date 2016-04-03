@@ -17,7 +17,7 @@ const LoginButton = React.createClass({
         return <FlatButton
             style={style}
             onClick={this.props.signup}
-            label="Register"
+            label="Login/Register"
             hoverColor="#e45a4c"
             rippleColor="#E87165"
         />;
