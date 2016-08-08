@@ -7,11 +7,7 @@
 var extend = require('lodash/fp/extend'),
     request = require('superagent');
 
-var
-    market = require('./market.js'),
-    consultants = require('./consultants.js')
-    ;
-
+var consultants = require('./consultants.js');
 
 /**
  * Module constructor.
@@ -40,16 +36,6 @@ ConsultantApi.prototype.init = function (config) {
 ConsultantApi.prototype.SetConfig = function (config) {
     this.config = extend(this.config, config);
 };
-
-/**
- * Market Client
- *
- * @api public
- */
-ConsultantApi.prototype.Market = function () {
-    return market.init(this);
-};
-
 
 /**
  * Consultants Client

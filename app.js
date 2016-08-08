@@ -38,7 +38,6 @@ app.use(session({
     }
 
 }));
-app.use('/api', router);
 app.get('*', routerMiddleware);
 
 module.exports = app;

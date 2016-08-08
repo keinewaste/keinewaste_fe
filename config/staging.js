@@ -4,7 +4,7 @@ var publicFolderPath = path.resolve(root, './public');
 
 module.exports = {
     isProduction: true,
-    domain: 'http://www.keinewaste.org',
+    domain: 'http://sapy.com',
     webpack: {
         assets: {
             path: path.join(publicFolderPath, 'dist'),

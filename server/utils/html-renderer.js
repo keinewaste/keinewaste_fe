@@ -23,9 +23,6 @@ const configureStore = client.configureStore;
 
 const baseViewPath = path.join(__dirname, '../views/index.ejs');
 
-import KeineWaste from 'keinewaste-sdk';
-
-
 function buildAssets() {
     return {
         javascript: _.values(webpackAssets.javascript),
@@ -36,9 +33,6 @@ function buildAssets() {
 exports.render = function render(data, userAgent) {
     return readFile(baseViewPath, 'utf-8')
         .then(viewTemplate => {
-            console.log('PERFORMANCE PDP: Html render start');
-
-
             const store = configureStore(browserHistory, initialState);
             const history = ReactRouterRedux.syncHistoryWithStore(browserHistory, store);
 
@@ -57,37 +51,15 @@ exports.render = function render(data, userAgent) {
                 assets: buildAssets()
             });
 
-            console.log('PERFORMANCE PDP: Html render finish', (new Date().getTime() - renderTime));
-
             return html;
         });
 };
 
 
 exports.middleware = function (req, res) {
-
-    var token = req.session.token;
-
-    if (token) {
-        console.log('user logged');
-    }
-
-    if (typeof req.cookies.accessToken !== 'undefined') {
-        console.log('Access token: ' + req.cookies.accessToken);
-        KeineWaste.SetConfig({
-            'token': req.cookies.accessToken
-        });
-
-        KeineWaste.UserClient().GetUser({'id': 'me'}, function (error, data) {
-            console.log(data);
-        });
-    }
-
     const memoryHistory = ReactRouter.createMemoryHistory(req.url);
     const store = configureStore(memoryHistory);
     const history = ReactRouterRedux.syncHistoryWithStore(memoryHistory, store);
-
-    console.log(req.url);
 
     // check user session
     ReactRouter.match({history, routes, location: req.url}, (error, redirectLocation, renderProps) => {
@@ -105,9 +77,6 @@ exports.middleware = function (req, res) {
 
             readFile(baseViewPath, 'utf-8')
                 .then(viewTemplate => {
-                    console.log('PERFORMANCE PDP: Html render start');
-
-                    const renderTime = new Date().getTime();
                     const html = ejs.render(viewTemplate, {
                         isDev: config.isDev,
                         state: store.getState(),
@@ -115,9 +84,6 @@ exports.middleware = function (req, res) {
                         //userAgent: userAgent,
                         assets: buildAssets()
                     });
-
-                    console.log('PERFORMANCE PDP: Html render finish', (new Date().getTime() - renderTime));
-
                     return res.send(html);
                 });
         } else {
