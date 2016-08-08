@@ -1,11 +1,7 @@
 import React from 'react';
-
-import {deepOrange500} from 'material-ui/lib/styles/colors';
-
-
 import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
 import theme from '../theme';
+import Header from './layout/header';
 
 const App = React.createClass({
     childContextTypes: {
@@ -16,21 +12,10 @@ const App = React.createClass({
             muiTheme: getMuiTheme(theme, { userAgent: 'all' })
         };
     },
-    componentDidMount() {
-        window.fbAsyncInit = () => {
-            FB.init({
-                appId: '1690233737898636',
-                xfbml: true,
-                version: 'v2.5'
-            });
-
-
-            this.props.checkUser();
-        };
-    },
     render() {
         return (
             <div>
+                <Header />
                 {this.props.children}
             </div>
         );

@@ -4,9 +4,7 @@ const Logo = React.createClass({
     propTypes: {},
     render() {
         return (
-            <div className="header-logo">
-                KeineWaste
-            </div>
+            <div className="header-logo"></div>
         );
     }
 });

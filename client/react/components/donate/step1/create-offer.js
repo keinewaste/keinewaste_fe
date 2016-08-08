@@ -22,7 +22,6 @@ const Donate = React.createClass({
             name: foodList.store.getState().foodList[0]
         }] }, delivery.state);
 
-
         this.props.requestCreateOffer(data);
     },
     render() {

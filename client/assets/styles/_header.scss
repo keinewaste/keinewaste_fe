@@ -28,7 +28,6 @@
 }
 
 .header-logo {
-    /* Text style for "KeineWaste" */
     flex: 1;
     color: white;
     font-size: 24px;
@@ -43,8 +42,8 @@
         top: 5px;
         background-image: url(../images/icon.png);
         content: '';
-        width: 56px;
-        height: 51px;
+        width: 130px;
+        height: 38px;
         display: inline-block;
     }
 }

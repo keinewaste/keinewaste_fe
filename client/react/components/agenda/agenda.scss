@@ -1,0 +1,29 @@
+.agenda {
+    .content {
+        padding: 85px 110px;
+        max-width: 1080px;
+        margin: auto;
+
+        h1 {
+            color: #4a4a4a;
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: 1.08px;
+            line-height: 44px;
+        }
+
+        h3 {
+            color: #4a4a4a;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.72px;
+            line-height: 29px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+    }
+}

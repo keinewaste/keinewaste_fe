@@ -18,7 +18,7 @@ export { foodListReducer };
 
 const rootReducer = (state, action) =>
     assign({}, state, {
-        foodList: foodListReducer(state, action)
+        consultantsList: foodListReducer(state, action)
     });
 
 export default rootReducer;

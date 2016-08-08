@@ -23,7 +23,6 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.use(cookieParser());
 
 app.use(compression());
-app.use(favicon(path.join(config.server.staticPath, 'favicon.ico')));
 app.use(express.static(config.server.staticPath));
 
 app.use(useragent.express());

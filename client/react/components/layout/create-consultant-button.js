@@ -1,24 +1,22 @@
 import React from 'react';
 import FlatButton from 'material-ui/lib/flat-button';
 
-const LoginButton = React.createClass({
+const CreateConsultantButton = React.createClass({
     propTypes: {},
     render() {
         const style = {
-            color: 'white',
+            color: 'black',
             textTransform: 'none',
-
-
             letterSpacing: '0.54px',
             fontWeight: 700
         };
         return <FlatButton
             style={style}
-            label="Log in"
-            href="/profile"
+            label="Create consultant"
+            href="/consultant/create"
             linkButton={true}
         />;
     }
 });
 
-export default LoginButton;
+export default CreateConsultantButton;
