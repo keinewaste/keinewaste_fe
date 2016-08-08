@@ -4,33 +4,12 @@
   },
   "styles": {},
   "assets": {
-    "./client/assets/images/alex.jpg": "http://localhost:3002/dist/5cd461ac68472e518850cf5e582bbcfe.jpg",
-    "./client/assets/images/avatar.jpg": "http://localhost:3002/dist/9e5a6355860ca4a308a0920817018cf0.jpg",
-    "./client/assets/images/background.jpg": "http://localhost:3002/dist/6f3eeb41ad58d22068c9788d228bb999.jpg",
-    "./client/assets/images/big-map.jpg": "http://localhost:3002/dist/32c39df1ccce2a39af784ec2dc60d8b3.jpg",
-    "./client/assets/images/donator-selected.png": "http://localhost:3002/dist/7e8b7bb79dfe07ed7cc929e0d42ba3a1.png",
-    "./client/assets/images/donator.png": "http://localhost:3002/dist/5dd836f86464d14b8fa11822ddffede5.png",
     "./client/assets/images/icon.png": "http://localhost:3002/dist/c7aa328c43115d78438bc08eebbe95eb.png",
-    "./client/assets/images/receiver-selected.png": "http://localhost:3002/dist/d2570e4a6d1f326005921e5f09360051.png",
-    "./client/assets/images/receiver.png": "http://localhost:3002/dist/ea8d56adae28cde03aa2c3a84c4e82ba.png",
-    "./client/assets/images/small-map.jpg": "http://localhost:3002/dist/aa1b96979f98519502c5df8392cf4fd6.jpg",
     "./client/assets/styles/main.scss": {
       "_style": ".main-header {\n  width: 100%;\n  background-color: #4a4a4a;\n  height: 80px;\n}\n\n.main-header .header-logo {\n  margin-left: 30px;\n}\n\n.header {\n  width: 100%;\n  height: 60px;\n  padding: 20px 40px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 10;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: baseline;\n      align-items: baseline;\n}\n\n.header .auth-buttons {\n  -ms-flex-preferred-size: 300px;\n      flex-basis: 300px;\n}\n\n.header-logo {\n  -ms-flex: 1;\n      flex: 1;\n  color: white;\n  font-size: 24px;\n  font-weight: 700;\n  letter-spacing: 0.72px;\n  line-height: 29px;\n  display: inline-block;\n}\n\n.header-logo:before {\n  position: relative;\n  margin-right: 10px;\n  top: 5px;\n  background-image: url(http://localhost:3002/dist/c7aa328c43115d78438bc08eebbe95eb.png);\n  content: '';\n  width: 130px;\n  height: 38px;\n  display: inline-block;\n}\n\n* {\n  box-sizing: border-box;\n}\n\n*:focus, *:active {\n  outline: 0;\n}\n\nbody {\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-family: Lato;\n  padding: 0;\n  margin: 0;\n}\n"
     },
-    "./client/react/components/about/about.scss": {
-      "_style": ".about .content {\n  padding-top: 60px;\n  margin: auto;\n}\n\n.about .content h2 {\n  text-align: center;\n  color: #4a4a4a;\n  font-size: 36px;\n  font-weight: 900;\n  letter-spacing: 1.08px;\n  line-height: 44px;\n  margin-top: 0;\n}\n"
-    },
-    "./client/react/components/about/join-now/join-now.scss": {
-      "_style": ".join-now {\n  width: 100%;\n  background-color: #e45a4c;\n}\n\n.join-now .content {\n  width: 860px;\n  padding: 69px;\n  text-align: center;\n}\n"
-    },
-    "./client/react/components/about/main-image-block/main-image-block.scss": {
-      "_style": ".about-main-image-block {\n  color: white;\n  width: 100%;\n  height: 600px;\n  background: url(http://localhost:3002/dist/6f3eeb41ad58d22068c9788d228bb999.jpg) top center no-repeat;\n  background-size: 100% 100%, cover;\n  padding-top: 100px;\n}\n\n.about-main-image-block .content {\n  max-width: 660px;\n  margin: auto;\n}\n\n.about-main-image-block .content .slogan {\n  width: 660px;\n  color: white;\n  font-size: 60px;\n  font-weight: 700;\n  letter-spacing: 1.75px;\n  line-height: 72px;\n  margin-bottom: 20px;\n}\n\n.about-main-image-block .content .description {\n  width: 660px;\n  color: white;\n  font-size: 24px;\n  font-weight: 400;\n  letter-spacing: 0.72px;\n  line-height: 29px;\n  margin: 0 0 50px 0;\n}\n\n.about-main-image-block .content .join {\n  text-align: center;\n}\n\n.about-main-image-block .content .join-button {\n  background: none !important;\n  height: 29px;\n  font-size: 24px;\n  font-weight: 700;\n  letter-spacing: 0.72px;\n  line-height: 29px;\n  border-radius: 8px;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);\n}\n"
-    },
     "./client/react/components/agenda/agenda.scss": {
       "_style": ".agenda .content {\n  padding: 85px 110px;\n  max-width: 1080px;\n  margin: auto;\n}\n\n.agenda .content h1 {\n  color: #4a4a4a;\n  font-size: 36px;\n  font-weight: 900;\n  letter-spacing: 1.08px;\n  line-height: 44px;\n}\n\n.agenda .content h3 {\n  color: #4a4a4a;\n  font-size: 22px;\n  font-weight: 700;\n  letter-spacing: 0.72px;\n  line-height: 29px;\n}\n\n.agenda .content .buttons {\n  margin-top: 20px;\n  text-align: left;\n}\n"
-    },
-    "./client/react/components/common/food-selection/food-selection.scss": {
-      "_style": ".food-selection {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: justify;\n      justify-content: space-between;\n}\n\n.food-selection .food-group {\n  -ms-flex-preferred-size: 300px;\n      flex-basis: 300px;\n}\n"
     },
     "./client/react/components/common/slot-selection/slot-selection.scss": {
       "_style": ".slot-selection {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: justify;\n      justify-content: space-between;\n}\n\n.slot-selection .food-group {\n  -ms-flex-preferred-size: 300px;\n      flex-basis: 300px;\n}\n"
@@ -41,23 +20,8 @@
     "./client/react/components/consultant/create/create-consultant.scss": {
       "_style": ".create-consultant .content {\n  padding: 85px 110px;\n  max-width: 1080px;\n  margin: auto;\n}\n\n.create-consultant .content h1 {\n  color: #4a4a4a;\n  font-size: 36px;\n  font-weight: 900;\n  letter-spacing: 1.08px;\n  line-height: 44px;\n}\n\n.create-consultant .content h3 {\n  color: #4a4a4a;\n  font-size: 22px;\n  font-weight: 700;\n  letter-spacing: 0.72px;\n  line-height: 29px;\n}\n\n.create-consultant .content .buttons {\n  margin-top: 20px;\n  text-align: left;\n}\n"
     },
-    "./client/react/components/donate/step1/create-offer.scss": {
-      "_style": ".create-offer .content {\n  padding: 85px 110px;\n  max-width: 1080px;\n  margin: auto;\n}\n\n.create-offer .content h1 {\n  color: #4a4a4a;\n  font-size: 36px;\n  font-weight: 900;\n  letter-spacing: 1.08px;\n  line-height: 44px;\n}\n\n.create-offer .content h3 {\n  color: #4a4a4a;\n  font-size: 22px;\n  font-weight: 700;\n  letter-spacing: 0.72px;\n  line-height: 29px;\n}\n\n.create-offer .content .buttons {\n  text-align: right;\n}\n"
-    },
-    "./client/react/components/donate/step1/delivery.scss": {
-      "_style": ".delivery-type {\n  margin-bottom: 30px;\n}\n\n.delivery-area {\n  display: -ms-flexbox;\n  display: flex;\n  width: 500px;\n  -ms-flex-align: start;\n      align-items: flex-start;\n}\n\n.delivery-area-choises {\n  -ms-flex: 1;\n      flex: 1;\n}\n\n.delivery-area-label {\n  -ms-flex-preferred-size: 50px;\n      flex-basis: 50px;\n}\n\n.delivery-time {\n  margin-bottom: 30px;\n}\n"
-    },
-    "./client/react/components/donate/step1/food-input.scss": {
-      "_style": ".food-input {\n  margin-bottom: 40px;\n}\n\n.food-input .description {\n  color: #4a4a4a;\n  font-size: 18px;\n  font-weight: 400;\n  letter-spacing: 0.54px;\n  line-height: 22px;\n}\n\n.food-input .food-item {\n  text-align: left;\n  height: 24px;\n  margin-bottom: 10px;\n  color: #4a4a4a;\n  font-size: 18px;\n  font-weight: 400;\n  line-height: 24px;\n}\n"
-    },
-    "./client/react/components/donate/step2/confirm-offer.scss": {
-      "_style": ".confirm-offer .content {\n  padding: 60px 80px;\n  max-width: 1080px;\n  margin: auto;\n}\n\n.confirm-offer .content h1 {\n  color: #4a4a4a;\n  font-size: 36px;\n  font-weight: 900;\n  letter-spacing: 1.08px;\n  line-height: 44px;\n}\n\n.confirm-offer .content .columns {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: start;\n      justify-content: flex-start;\n  -ms-flex-align: start;\n      align-items: flex-start;\n}\n\n.confirm-offer .content .columns .left {\n  -ms-flex-preferred-size: 500px;\n      flex-basis: 500px;\n  margin-right: 50px;\n}\n\n.confirm-offer .content .columns .left .user-info {\n  display: -ms-flexbox;\n  display: flex;\n  background-color: #fafafa;\n  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);\n}\n\n.confirm-offer .content .columns .left .user-info-logo {\n  width: 136px;\n  max-height: 180px;\n}\n\n.confirm-offer .content .columns .left .user-info-details {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n}\n\n.confirm-offer .content .columns .left .user-info-details-assoc {\n  -ms-flex: 2;\n      flex: 2;\n  padding: 26px 33px;\n  color: rgba(0, 0, 0, 0.87);\n  font-size: 22px;\n  font-weight: 400;\n  line-height: 32px;\n  border-bottom: 1px solid silver;\n}\n\n.confirm-offer .content .columns .left .user-info-details-name {\n  padding: 17px;\n  -ms-flex: 1;\n      flex: 1;\n  color: #4a4a4a;\n  font-size: 18px;\n  font-weight: 400;\n  line-height: 24px;\n}\n\n.confirm-offer .content .columns .left .contact {\n  margin-bottom: 40px;\n}\n\n.confirm-offer .content .columns .left .data, .confirm-offer .content .columns .left .label {\n  font-size: 15px;\n  font-weight: 400;\n  line-height: 22px;\n}\n\n.confirm-offer .content .columns .left .label {\n  color: #9b9b9b;\n  margin-bottom: 0;\n}\n\n.confirm-offer .content .columns .left .data {\n  color: rgba(0, 0, 0, 0.87);\n}\n\n.confirm-offer .content .columns .left .buttons {\n  text-align: right;\n}\n"
-    },
     "./client/react/components/overview/overview.scss": {
       "_style": ".overview .content {\n  padding: 85px 110px;\n  max-width: 1080px;\n  margin: auto;\n}\n\n.overview .content h1 {\n  color: #4a4a4a;\n  font-size: 36px;\n  font-weight: 900;\n  letter-spacing: 1.08px;\n  line-height: 44px;\n}\n\n.overview .content h3 {\n  color: #4a4a4a;\n  font-size: 22px;\n  font-weight: 700;\n  letter-spacing: 0.72px;\n  line-height: 29px;\n}\n\n.overview .content .buttons {\n  margin-top: 20px;\n  text-align: left;\n}\n"
-    },
-    "./client/react/components/profile/edit/edit-profile.scss": {
-      "_style": ".edit-profile {\n  margin: 60px 10% 0 30%;\n  width: 600px;\n}\n\n.edit-profile h2 {\n  font-size: 36px;\n  font-weight: 900;\n  letter-spacing: 1.08px;\n  line-height: 44px;\n}\n\n.edit-profile .wrap {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: start;\n      align-items: flex-start;\n}\n\n.edit-profile .wrap .avatar {\n  margin-right: 90px;\n}\n\n.edit-profile .wrap .form {\n  width: 330px;\n}\n\n.edit-profile .wrap .form .choose-team .title {\n  color: #e45a4c;\n  font-size: 22px;\n  font-weight: 700;\n  letter-spacing: 0.72px;\n  line-height: 29px;\n}\n\n.edit-profile .wrap .form .choose-team .team-picker {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: justify;\n      justify-content: space-between;\n}\n\n.edit-profile .wrap .form .choose-team .team-picker .team-title {\n  text-align: center;\n  color: #4a4a4a;\n  font-size: 16px;\n  font-weight: 700;\n  letter-spacing: 0.54px;\n  line-height: 22px;\n}\n"
     }
   }
 }

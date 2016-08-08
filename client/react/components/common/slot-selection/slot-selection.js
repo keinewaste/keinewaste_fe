@@ -1,15 +1,40 @@
 import React from 'react';
 import Checkbox from 'material-ui/lib/checkbox';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/lib/table';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 import './slot-selection.scss';
 
 const SlotSelection = React.createClass({
+    mixins: [PureRenderMixin],
     propTypes: {},
     getInitialState() {
-        return {
-            categories: []
+        var updatedCategories = {};
+        for (var hn = 1; hn <= 23; hn++) {
+            for (var dn = 1; dn <= 7; dn++) {
+                if (hn >= 9 && hn <= 22 && dn != 7) {
+                    updatedCategories[dn + "_" + hn] = true;
+                } else {
+                    updatedCategories[dn + "_" + hn] = false;
+                }
+            }
         }
+
+        return {
+            categories: updatedCategories
+        }
+    },
+    _handleSlotChange: function(e) {
+        var updatedCategories = this.state.categories;
+        if (e.target.checked) {
+            updatedCategories[e.target.value] = true;
+        } else {
+            updatedCategories[e.target.value] = false;
+        }
+        console.log(updatedCategories);
+        this.setState({
+            categories: updatedCategories
+        });
     },
     render() {
 
@@ -20,8 +45,8 @@ const SlotSelection = React.createClass({
             for (var dn = 1; dn <= 7; dn++) {
                 hourKeys.push({
                     label: ((hn < 10) ? ("0" + hn) : hn) + ":00",
-                    disabled: dn == 7 ? true : false,
-                    default_checked: hn >= 9 && hn <= 22 && dn != 7 ? true : false
+                    value: dn + "_" + hn,
+                    disabled: dn == 7 ? true : false
                 });
             }
             slotKeys.push(hourKeys);
@@ -57,8 +82,10 @@ const SlotSelection = React.createClass({
                                    <TableRowColumn>
                                     <Checkbox
                                       label={column.label}
-                                      defaultChecked={column.default_checked}
+                                      value={column.value}
+                                      defaultChecked={this.state.categories[column.value]}
                                       disabled={column.disabled}
+                                      onCheck={this._handleSlotChange}
                                     />
                                    </TableRowColumn>
                                  ))}

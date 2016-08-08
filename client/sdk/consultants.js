@@ -10,9 +10,12 @@ Consultants.prototype.init = function (client) {
     return this;
 };
 
-
 Consultants.prototype.GetAll = function (params, callback) {
     this.client.callApi(api, 'GetAll', params, callback);
+};
+
+Consultants.prototype.CreateConsultant = function (params, callback) {
+    this.client.callApi(api, 'CreateConsultant', params, callback);
 };
 
 module.exports = new Consultants();

@@ -4,8 +4,9 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColu
 import includes from 'lodash/includes';
 import IconButton from 'material-ui/lib/icon-button';
 import PrintIcon from 'material-ui/lib/svg-icons/action/print';
-import { requestOverview } from 'client/react/actions/consultants';
 import ConsultantApi from 'client/sdk';
+import DatePicker from 'material-ui/lib/date-picker/date-picker';
+import moment from 'moment';
 
 import './time-table.scss';
 
@@ -13,37 +14,32 @@ const Consultants = ConsultantApi.Consultants();
 
 const TimeTable = React.createClass({
     propTypes: {},
-    componentDidMount: function() {
+    componentWillMount: function() {
+        this.updateTable(this.state.date);
+    },
+    updateTable(date) {
+        const dateTime = moment(date).format('DD-MM-YYYY');
         Consultants.GetAll({
-            date: "01-01-16"
-        }, function(err, data) {
+            date: dateTime
+        }, (err, data) => {
             if (err) {
                 console.log('get consultants failed', err);
             }
-            console.log ('setting data', data);
             this.setState({
-              consultantsList: data
+              consultants: data
             });
         })
-
-        console.log(this.state);
+    },
+    setDate(e, value) {
+        this.setState({
+            date: value
+        });
+        this.updateTable(value);
     },
     getInitialState() {
         return {
-            consultants: [
-                             {
-                                 firstName: "Yegor",
-                                 lastName: "Tokmakov",
-                                 timeslots: [9,10,11,12,20,21],
-                                 bookings: {
-                                     11: {
-                                         firstName: "Vasya",
-                                         lastName: "Pupkin",
-                                         time: 11
-                                     }
-                                 }
-                             }
-                         ]
+            consultants: [],
+            date: new Date()
         }
     },
     render() {
@@ -55,8 +51,13 @@ const TimeTable = React.createClass({
         };
 
         return (
+                <div className="time-table">
+                <DatePicker
+                    hintText="Landscape Dialog"
+                    onChange={this.setDate}
+                    value={this.state.date}
+                    mode="landscape" />
                 <Table
-                  className="time-table"
                   selectable={false}
                 >
                    <TableHeader
@@ -100,7 +101,8 @@ const TimeTable = React.createClass({
                              </TableRow>
                              ))}
                    </TableBody>
-                 </Table>
+                </Table>
+                </div>
         );
     }
 });
